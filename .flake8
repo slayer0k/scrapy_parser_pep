@@ -8,6 +8,6 @@ max-line-length = 79
 exclude =
     tests/
     venv/
-  ./pep_parse/settings.py
-  ./pep_parse/middlewares.py
+  ./pep_parse/pep_parse/settings.py
+  ./pep_parse/pep_parse/middlewares.py
   __init__.py

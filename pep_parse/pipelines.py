@@ -1,7 +1,7 @@
 import csv
 import datetime as dt
 
-from pep_parse.settings import FILE_PATH, BASE_DIR
+from pep_parse.settings import BASE_DIR, FILE_PATH
 
 
 class PepParsePipeline:
