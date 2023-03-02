@@ -20,13 +20,10 @@ class PepParsePipeline:
             'w', encoding='utf-8'
         ) as file:
             fieldnames = ['Статус', 'Количество']
-            writer = csv.DictWriter(
-                file, fieldnames=fieldnames, lineterminator='\n'
-            )
-            writer.writeheader()
-            for key, value in self.statuses.items():
-                writer.writerow({'Статус': key, 'Количество': value})
-            writer.writerow({
-                'Статус': 'Total',
-                'Количество': sum(self.statuses.values())
-            })
+            writer = csv.writer(file, lineterminator='\n')
+            writer.writerow(fieldnames)
+            writer.writerows([*self.statuses.items()])
+            writer.writerow([
+                'Total',
+                 sum(self.statuses.values())
+            ])

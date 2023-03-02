@@ -1,5 +1,6 @@
 import scrapy
 
+ALLOWED_DOMAINS = ['peps.python.org']
 
 class PepSpider(scrapy.Spider):
     name = 'pep'
@@ -8,9 +9,9 @@ class PepSpider(scrapy.Spider):
 
     def parse(self, response):
         pep_links = response.css(
-            '#numerical-index a.pep.reference.internal::attr(href)'
+            '#numerical-index tr td:nth-child(2) a::attr(href)'
         ).extract()
-        for pep_link in pep_links[::2]:
+        for pep_link in pep_links:
             yield response.follow(pep_link, callback=self.parse_pep)
 
     def parse_pep(sefl, response):
