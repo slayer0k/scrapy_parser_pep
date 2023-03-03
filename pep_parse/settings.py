@@ -11,7 +11,6 @@ from pathlib import Path
 BOT_NAME = 'pep_parse'
 
 SPIDER_MODULES = ['pep_parse.spiders']
-NEWSPIDER_MODULE = 'pep_parse.spiders'
 
 # Crawl responsibly by identifying yourself (and your website)on the user-agent
 # USER_AGENT = 'pep_parse (+http://www.yourdomain.com)'
