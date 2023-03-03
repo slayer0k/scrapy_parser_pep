@@ -25,5 +25,5 @@ class PepParsePipeline:
             writer.writerows([*self.statuses.items()])
             writer.writerow([
                 'Total',
-                 sum(self.statuses.values())
+                sum(self.statuses.values())
             ])

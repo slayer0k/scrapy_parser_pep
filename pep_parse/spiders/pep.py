@@ -2,6 +2,7 @@ import scrapy
 
 ALLOWED_DOMAINS = ['peps.python.org']
 
+
 class PepSpider(scrapy.Spider):
     name = 'pep'
     start_urls = ['https://peps.python.org/']
