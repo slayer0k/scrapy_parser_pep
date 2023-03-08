@@ -24,6 +24,6 @@ class PepParsePipeline:
             writer.writerow(fieldnames)
             writer.writerows([*self.statuses.items()])
             writer.writerow([
-                'Total',
+                'Всего',
                 sum(self.statuses.values())
             ])
