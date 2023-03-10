@@ -21,9 +21,7 @@ class PepParsePipeline:
         ) as file:
             fieldnames = ['Статус', 'Количество']
             writer = csv.writer(file, lineterminator='\n')
-            writer.writerow(fieldnames)
-            writer.writerows([*self.statuses.items()])
-            writer.writerow([
-                'Всего',
-                sum(self.statuses.values())
+            writer.writerows([
+                fieldnames, *self.statuses.items(),
+                ('Всего', sum(self.statuses.values()))
             ])
